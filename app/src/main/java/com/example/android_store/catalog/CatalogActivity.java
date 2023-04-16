@@ -1,11 +1,11 @@
 package com.example.android_store.catalog;
 
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.os.Bundle;
 
 import com.example.android_store.R;
 import com.example.android_store.catalog.categoryCard.CategoryAdapter;
@@ -19,7 +19,6 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class CatalogActivity extends AppCompatActivity {
-
     CategoryAdapter categoryAdapter;
     private RecyclerView rcvCategories;
 

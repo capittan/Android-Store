@@ -19,6 +19,9 @@
             android:name=".catalog.CatalogActivity"
             android:exported="false" />
         <activity
+            android:name=".catalog.AddNewCategory"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
