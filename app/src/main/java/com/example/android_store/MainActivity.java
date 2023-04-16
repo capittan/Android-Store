@@ -11,6 +11,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.android_store.application.HomeApplication;
 import com.example.android_store.catalog.AddNewCategory;
+import com.example.android_store.catalog.CatalogActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,15 +21,18 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ImageView imgLogo = (ImageView) findViewById(R.id.imgLogo);
-        String url = "https://www.collinsdictionary.com/images/full/tree_267376982.jpg";
         Glide.with(HomeApplication.getAppContext())
-                .load(url)
+                .load("https://www.iconpacks.net/icons/2/free-store-icon-2017-thumb.png")
                 .apply(new RequestOptions().override(600))
                 .into(imgLogo);
     }
 
-    public void onClickBtn(View view) {
+    public void goToAddNewCategory(View view) {
         Intent intent = new Intent(MainActivity.this, AddNewCategory.class);
+        startActivity(intent);
+    }
+    public void goToCatalogActivity(View view) {
+        Intent intent = new Intent(MainActivity.this, CatalogActivity.class);
         startActivity(intent);
     }
 }

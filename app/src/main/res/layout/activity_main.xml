@@ -18,18 +18,29 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="148dp"
-        android:layout_height="59dp"
-        android:layout_marginTop="244dp"
-        android:onClick="onClickBtn"
+        android:layout_width="127dp"
+        android:layout_height="54dp"
+        android:onClick="goToCatalogActivity"
         android:text="Catalog"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
         tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="228dp"
+        android:onClick="goToAddNewCategory"
+        android:text="Add new category"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView" />
 
     <ImageView
         android:id="@+id/imgLogo"
@@ -41,5 +52,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/ic_launcher_background"
         tools:ignore="MissingConstraints" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

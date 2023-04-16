@@ -20,9 +20,8 @@ public class AddNewCategory extends AppCompatActivity {
         setContentView(R.layout.activity_add_new_category);
 
         ImageView imgLogo = (ImageView) findViewById(R.id.imgLogo);
-        String url = "https://www.collinsdictionary.com/images/full/tree_267376982.jpg";
         Glide.with(HomeApplication.getAppContext())
-                .load(url)
+                .load("https://cdn-icons-png.flaticon.com/128/6631/6631821.png")
                 .apply(new RequestOptions().override(600))
                 .into(imgLogo);
     }
