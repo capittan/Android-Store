@@ -1,4 +1,4 @@
-package com.example.android_store.network;
+package com.example.android_store.network.category;
 
 import com.example.android_store.dtos.category.CategoryItemDTO;
 

@@ -1,7 +1,7 @@
-package com.example.android_store.services;
+package com.example.android_store.services.category;
 
 import com.example.android_store.constans.Urls;
-import com.example.android_store.network.CategoriesApi;
+import com.example.android_store.network.category.CategoriesApi;
 
 import java.util.concurrent.TimeUnit;
 

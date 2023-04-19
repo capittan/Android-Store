@@ -12,6 +12,7 @@ import com.bumptech.glide.request.RequestOptions;
 import com.example.android_store.application.HomeApplication;
 import com.example.android_store.catalog.AddNewCategory;
 import com.example.android_store.catalog.CatalogActivity;
+import com.example.android_store.user.UserActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,6 +34,10 @@ public class MainActivity extends AppCompatActivity {
     }
     public void goToCatalogActivity(View view) {
         Intent intent = new Intent(MainActivity.this, CatalogActivity.class);
+        startActivity(intent);
+    }
+    public void goToUserActivity(View view) {
+        Intent intent = new Intent(MainActivity.this, UserActivity.class);
         startActivity(intent);
     }
 }

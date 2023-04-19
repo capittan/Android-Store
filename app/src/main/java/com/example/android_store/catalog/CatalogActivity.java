@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.android_store.R;
 import com.example.android_store.catalog.categoryCard.CategoryAdapter;
 import com.example.android_store.dtos.category.CategoryItemDTO;
-import com.example.android_store.services.CategoryNetwork;
+import com.example.android_store.services.category.CategoryNetwork;
 
 import java.util.List;
 
