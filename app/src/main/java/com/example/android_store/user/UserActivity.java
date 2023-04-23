@@ -3,11 +3,11 @@ package com.example.android_store.user;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.android_store.BaseActivity;
 import com.example.android_store.R;
 import com.example.android_store.dtos.user.UserItemDTO;
 import com.example.android_store.services.user.UserNetwork;
@@ -18,7 +18,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class UserActivity extends AppCompatActivity {
+public class UserActivity extends BaseActivity {
     UserAdapter userAdapter;
     private RecyclerView rcvUser;
 

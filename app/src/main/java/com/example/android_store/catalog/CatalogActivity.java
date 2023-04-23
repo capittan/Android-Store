@@ -2,11 +2,11 @@ package com.example.android_store.catalog;
 
 import android.os.Bundle;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.android_store.BaseActivity;
 import com.example.android_store.R;
 import com.example.android_store.catalog.categoryCard.CategoryAdapter;
 import com.example.android_store.dtos.category.CategoryItemDTO;
@@ -18,7 +18,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class CatalogActivity extends AppCompatActivity {
+public class CatalogActivity extends BaseActivity {
     CategoryAdapter categoryAdapter;
     private RecyclerView rcvCategories;
 
