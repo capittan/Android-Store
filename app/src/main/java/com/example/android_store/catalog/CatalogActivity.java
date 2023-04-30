@@ -11,6 +11,7 @@ import com.example.android_store.R;
 import com.example.android_store.catalog.categoryCard.CategoryAdapter;
 import com.example.android_store.dtos.category.CategoryItemDTO;
 import com.example.android_store.services.category.CategoryNetwork;
+import com.example.android_store.utils.CommonUtils;
 
 import java.util.List;
 
@@ -26,7 +27,6 @@ public class CatalogActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_catalog);
-        requestServer();
 
         rcvCategories = findViewById(R.id.rcvCategories);
         rcvCategories.setHasFixedSize(true);
@@ -35,9 +35,11 @@ public class CatalogActivity extends BaseActivity {
     }
 
     private void requestServer() {
+        CommonUtils.showLoading();
         CategoryNetwork.getInstance().getJsonApi().listCall().enqueue(new Callback<List<CategoryItemDTO>>() {
             @Override
             public void onResponse(Call<List<CategoryItemDTO>> call, Response<List<CategoryItemDTO>> response) {
+                CommonUtils.hideLoading();
                 List<CategoryItemDTO> data = response.body();
                 categoryAdapter = new CategoryAdapter(data);
                 rcvCategories.setAdapter(categoryAdapter);
@@ -45,7 +47,7 @@ public class CatalogActivity extends BaseActivity {
 
             @Override
             public void onFailure(Call<List<CategoryItemDTO>> call, Throwable t) {
-
+                CommonUtils.hideLoading();
             }
         });
     }

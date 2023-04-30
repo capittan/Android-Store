@@ -10,14 +10,20 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.android_store.catalog.AddNewCategory;
 import com.example.android_store.catalog.CatalogActivity;
 import com.example.android_store.user.UserActivity;
+import com.example.android_store.utils.CommonUtils;
 
 public class BaseActivity extends AppCompatActivity {
+
+    public BaseActivity(){
+        CommonUtils.setContext(this);
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_main, menu);
         return true;
     }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
