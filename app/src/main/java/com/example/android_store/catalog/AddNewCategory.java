@@ -11,6 +11,7 @@ import android.text.TextWatcher;
 import android.util.Base64;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.android_store.BaseActivity;
@@ -41,6 +42,7 @@ public class AddNewCategory extends BaseActivity {
     TextInputLayout txtFieldCategoryName;
     TextInputLayout txtFieldCategoryPriority;
     TextInputLayout txtFieldCategoryDescription;
+    TextView textImageError;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +54,7 @@ public class AddNewCategory extends BaseActivity {
         txtCategoryName = findViewById(R.id.txtCategoryName);
         txtCategoryPriority = findViewById(R.id.txtCategoryPriority);
         txtCategoryDescription = findViewById(R.id.txtCategoryDescription);
+        textImageError = findViewById(R.id.textImageError);
 
         txtFieldCategoryName = findViewById(R.id.txtFieldCategoryName);
         txtFieldCategoryPriority = findViewById(R.id.txtFieldCategoryPriority);
@@ -124,8 +127,7 @@ public class AddNewCategory extends BaseActivity {
                 if (charSequence.toString().isEmpty() || charSequence.length() <= 2) {
                     txtFieldCategoryDescription.setError(getString(R.string.category_description_required));
                     txtFieldCategoryDescription.setErrorEnabled(true);
-                }
-                else{
+                } else {
                     txtFieldCategoryDescription.setErrorEnabled(false);
                 }
             }
@@ -152,8 +154,7 @@ public class AddNewCategory extends BaseActivity {
                 if (number <= 0) {
                     txtFieldCategoryPriority.setError(getString(R.string.category_priority_required));
                     txtFieldCategoryPriority.setErrorEnabled(true);
-                }
-                else{
+                } else {
                     txtFieldCategoryPriority.setErrorEnabled(false);
                 }
             }
@@ -189,6 +190,10 @@ public class AddNewCategory extends BaseActivity {
             txtFieldCategoryPriority.setError(getString(R.string.category_priority_required));
             isValid = false;
         }
+        if (uri == null) {
+            textImageError.setVisibility(View.VISIBLE);
+            isValid = false;
+        }
 
         return isValid;
     }
@@ -221,6 +226,7 @@ public class AddNewCategory extends BaseActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == SELECT_CROPPER) {
             uri = (Uri) data.getParcelableExtra("croppedUri");
+            textImageError.setVisibility(View.INVISIBLE);
             IVPreviewImage.setImageURI(uri);
         }
     }
