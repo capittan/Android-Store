@@ -2,6 +2,7 @@ package com.example.android_store.network.category;
 
 import com.example.android_store.dtos.category.CategoryCreateDTO;
 import com.example.android_store.dtos.category.CategoryItemDTO;
+import com.example.android_store.dtos.category.CategoryUpdateDTO;
 
 import java.util.List;
 
@@ -10,11 +11,18 @@ import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
 import retrofit2.http.Path;
 
 public interface CategoriesApi {
     @GET("/api/categories/list")
     public Call<List<CategoryItemDTO>> listCall();
+
+    @GET("/api/categories/{id}")
+    public Call<CategoryItemDTO> getById(@Path("id") int id);
+
+    @PUT("/api/categories/update")
+    public Call<Void> update(@Body CategoryUpdateDTO category);
 
     @POST("/api/categories/create")
     public Call<Void> create(@Body CategoryCreateDTO categoryCreateDTO);

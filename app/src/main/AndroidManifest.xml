@@ -22,6 +22,9 @@
             android:name=".user.UserActivity"
             android:exported="false" />
         <activity
+            android:name=".catalog.CategoryUpdateActivity"
+            android:exported="false" />
+        <activity
             android:name=".catalog.CatalogActivity"
             android:exported="false" />
         <activity

@@ -19,10 +19,14 @@ import java.util.List;
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryCardViewHolder> {
     private List<CategoryItemDTO> categoryItemDTOList;
     private final OnCategoryClickListener onClickDelete;
+    private final OnCategoryClickListener onClickUpdate;
 
-    public CategoryAdapter(List<CategoryItemDTO> categoryItemDTOList, OnCategoryClickListener onClickDelete) {
+    public CategoryAdapter(List<CategoryItemDTO> categoryItemDTOList,
+                           OnCategoryClickListener onClickDelete,
+                           OnCategoryClickListener onClickUpdate) {
         this.categoryItemDTOList = categoryItemDTOList;
         this.onClickDelete = onClickDelete;
+        this.onClickUpdate = onClickUpdate;
     }
 
     @NonNull
@@ -44,10 +48,16 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryCardViewHolder
                     .load(url)
                     .apply(new RequestOptions().override(600))
                     .into(holder.categoryImage);
-            holder.btnCategoryDelete.setOnClickListener(new View.OnClickListener(){
+            holder.btnCategoryDelete.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View view){
+                public void onClick(View view) {
                     onClickDelete.onButtonClick(categoryItemDTO);
+                }
+            });
+            holder.btnCategoryUpdate.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    onClickUpdate.onButtonClick(categoryItemDTO);
                 }
             });
         }

@@ -6,17 +6,9 @@
     android:layout_gravity="center"
     android:background="@android:color/transparent">
 
-    <!--        <ProgressBar-->
-    <!--            android:id="@+id/pb_loading"-->
-    <!--            android:layout_width="wrap_content"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:layout_centerInParent="true"-->
-    <!--            android:indeterminateTint="@color/purple_700"-->
-    <!--            android:progressDrawable="@color/black_effective" />-->
-
     <com.github.ybq.android.spinkit.SpinKitView
         android:id="@+id/spin_kit"
-        style="@style/SpinKitView.Large.FadingCircle"
+        style="@style/SpinKitView.Large.ChasingDots"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"

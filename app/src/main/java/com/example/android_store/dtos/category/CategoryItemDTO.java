@@ -5,6 +5,26 @@ public class CategoryItemDTO {
     private String name;
     private String image;
 
+    private int priority;
+
+    private String description;
+
+    public int getPriority() {
+        return priority;
+    }
+
+    public void setPriority(int priority) {
+        this.priority = priority;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     public int getId() {
         return id;
     }
@@ -12,6 +32,7 @@ public class CategoryItemDTO {
     public String getName() {
         return name;
     }
+
     public String getImage() {
         return image;
     }

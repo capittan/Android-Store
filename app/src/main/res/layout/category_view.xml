@@ -69,7 +69,6 @@
             android:layout_height="wrap_content"
             android:text="Update"
             android:textSize="12dp"
-            android:textColor="@color/white"
             app:icon="@drawable/baseline_edit_24"
             style="?attr/materialButtonOutlinedStyle"
             app:layout_constraintStart_toStartOf="parent"
