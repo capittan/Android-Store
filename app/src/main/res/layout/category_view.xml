@@ -33,6 +33,7 @@
             app:layout_scrollFlags="scroll|enterAlways" />
 
         <LinearLayout
+            android:id="@+id/allText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -44,11 +45,35 @@
                 android:layout_height="match_parent"
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="10dp"
-
                 android:text="Пошта"
                 android:textSize="18dp"
                 />
         </LinearLayout>
+
+        <Button
+            android:id="@+id/btnCategoryDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Delete"
+            android:textSize="12dp"
+            android:textColor="@color/red"
+            app:iconTint="@color/red"
+            app:icon="@drawable/baseline_close_24"
+            style="?attr/materialButtonOutlinedStyle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/allText" />
+
+        <Button
+            android:id="@+id/btnCategoryUpdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Update"
+            android:textSize="12dp"
+            android:textColor="@color/white"
+            app:icon="@drawable/baseline_edit_24"
+            style="?attr/materialButtonOutlinedStyle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnCategoryDelete" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

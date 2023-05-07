@@ -1,5 +1,6 @@
 package com.example.android_store.catalog;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -41,7 +42,7 @@ public class CatalogActivity extends BaseActivity {
             public void onResponse(Call<List<CategoryItemDTO>> call, Response<List<CategoryItemDTO>> response) {
                 CommonUtils.hideLoading();
                 List<CategoryItemDTO> data = response.body();
-                categoryAdapter = new CategoryAdapter(data);
+                categoryAdapter = new CategoryAdapter(data, CatalogActivity.this::onClickDelete);
                 rcvCategories.setAdapter(categoryAdapter);
             }
 
@@ -50,5 +51,26 @@ public class CatalogActivity extends BaseActivity {
                 CommonUtils.hideLoading();
             }
         });
+    }
+
+    void onClickDelete(CategoryItemDTO categoryItemDTO) {
+        CommonUtils.showLoading();
+        CategoryNetwork.getInstance()
+                .getJsonApi()
+                .delete(categoryItemDTO.getId())
+                .enqueue(new Callback<Void>() {
+                    @Override
+                    public void onResponse(Call<Void> call, Response<Void> response) {
+                        CommonUtils.hideLoading();
+                        Intent intent = new Intent(CatalogActivity.this, CatalogActivity.class);
+                        startActivity(intent);
+                        finish();
+                    }
+
+                    @Override
+                    public void onFailure(Call<Void> call, Throwable t) {
+                        CommonUtils.hideLoading();
+                    }
+                });
     }
 }
