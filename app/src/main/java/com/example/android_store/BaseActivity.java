@@ -33,9 +33,17 @@ public class BaseActivity extends AppCompatActivity {
                 try {
                     intent = new Intent(BaseActivity.this, MainActivity.class);
                     startActivity(intent);
-                    //finish();
                 } catch (Exception ex) {
-                    System.out.println("Erorr: " + ex.getMessage());
+                    System.out.println("Error: " + ex.getMessage());
+                }
+                break;
+
+            case R.id.m_signUp:
+                try {
+                    intent = new Intent(BaseActivity.this, SignUpActivity.class);
+                    startActivity(intent);
+                } catch (Exception ex) {
+                    System.out.println("Error: " + ex.getMessage());
                 }
                 break;
 
@@ -43,9 +51,8 @@ public class BaseActivity extends AppCompatActivity {
                 try {
                     intent = new Intent(BaseActivity.this, CatalogActivity.class);
                     startActivity(intent);
-                    //finish();
                 } catch (Exception ex) {
-                    System.out.println("Erorr: " + ex.getMessage());
+                    System.out.println("Error: " + ex.getMessage());
                 }
                 break;
 
@@ -53,9 +60,8 @@ public class BaseActivity extends AppCompatActivity {
                 try {
                     intent = new Intent(BaseActivity.this, AddNewCategory.class);
                     startActivity(intent);
-                    //finish();
                 } catch (Exception ex) {
-                    System.out.println("Erorr: " + ex.getMessage());
+                    System.out.println("Error: " + ex.getMessage());
                 }
                 break;
 
@@ -63,9 +69,8 @@ public class BaseActivity extends AppCompatActivity {
                 try {
                     intent = new Intent(BaseActivity.this, UserActivity.class);
                     startActivity(intent);
-                    //finish();
                 } catch (Exception ex) {
-                    System.out.println("Erorr: " + ex.getMessage());
+                    System.out.println("Error: " + ex.getMessage());
                 }
                 break;
             default:

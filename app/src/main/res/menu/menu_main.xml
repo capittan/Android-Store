@@ -7,6 +7,11 @@
         app:showAsAction="never"/>
 
     <item
+        android:id="@+id/m_signUp"
+        android:title="Sign Up"
+        app:showAsAction="never"/>
+
+    <item
         android:id="@+id/m_catalog"
         android:title="Catalog"
         app:showAsAction="never"/>
