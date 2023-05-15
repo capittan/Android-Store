@@ -23,7 +23,7 @@ import com.example.android_store.application.HomeApplication;
 import com.example.android_store.constans.Urls;
 import com.example.android_store.dtos.category.CategoryItemDTO;
 import com.example.android_store.dtos.category.CategoryUpdateDTO;
-import com.example.android_store.services.category.CategoryNetwork;
+import com.example.android_store.services.category.ApplicationNetwork;
 import com.example.android_store.utils.CommonUtils;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
@@ -77,9 +77,9 @@ public class CategoryUpdateActivity extends BaseActivity {
 
     public void initInput() {
         CommonUtils.showLoading();
-        CategoryNetwork
+        ApplicationNetwork
                 .getInstance()
-                .getJsonApi()
+                .getCategoryApi()
                 .getById(id)
                 .enqueue(new Callback<CategoryItemDTO>() {
                     @Override
@@ -118,9 +118,9 @@ public class CategoryUpdateActivity extends BaseActivity {
         if (uri != null)
             model.setImageBase64(uriGetBase64(uri));
 
-        CategoryNetwork
+        ApplicationNetwork
                 .getInstance()
-                .getJsonApi()
+                .getCategoryApi()
                 .update(model)
                 .enqueue(new Callback<Void>() {
                     @Override

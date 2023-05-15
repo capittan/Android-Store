@@ -11,7 +11,7 @@ import com.example.android_store.BaseActivity;
 import com.example.android_store.R;
 import com.example.android_store.catalog.categoryCard.CategoryAdapter;
 import com.example.android_store.dtos.category.CategoryItemDTO;
-import com.example.android_store.services.category.CategoryNetwork;
+import com.example.android_store.services.category.ApplicationNetwork;
 import com.example.android_store.utils.CommonUtils;
 
 import java.util.List;
@@ -37,7 +37,7 @@ public class CatalogActivity extends BaseActivity {
 
     private void requestServer() {
         CommonUtils.showLoading();
-        CategoryNetwork.getInstance().getJsonApi().listCall().enqueue(new Callback<List<CategoryItemDTO>>() {
+        ApplicationNetwork.getInstance().getCategoryApi().listCall().enqueue(new Callback<List<CategoryItemDTO>>() {
             @Override
             public void onResponse(Call<List<CategoryItemDTO>> call, Response<List<CategoryItemDTO>> response) {
                 CommonUtils.hideLoading();
@@ -55,8 +55,8 @@ public class CatalogActivity extends BaseActivity {
 
     void onClickDelete(CategoryItemDTO categoryItemDTO) {
         CommonUtils.showLoading();
-        CategoryNetwork.getInstance()
-                .getJsonApi()
+        ApplicationNetwork.getInstance()
+                .getCategoryApi()
                 .delete(categoryItemDTO.getId())
                 .enqueue(new Callback<Void>() {
                     @Override

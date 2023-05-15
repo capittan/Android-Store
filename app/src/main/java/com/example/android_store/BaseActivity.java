@@ -7,6 +7,8 @@ import android.view.MenuItem;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.android_store.account.LoginActivity;
+import com.example.android_store.account.SignUpActivity;
 import com.example.android_store.catalog.AddNewCategory;
 import com.example.android_store.catalog.CatalogActivity;
 import com.example.android_store.user.UserActivity;
@@ -32,6 +34,15 @@ public class BaseActivity extends AppCompatActivity {
             case R.id.m_home:
                 try {
                     intent = new Intent(BaseActivity.this, MainActivity.class);
+                    startActivity(intent);
+                } catch (Exception ex) {
+                    System.out.println("Error: " + ex.getMessage());
+                }
+                break;
+
+            case R.id.m_logIn:
+                try {
+                    intent = new Intent(BaseActivity.this, LoginActivity.class);
                     startActivity(intent);
                 } catch (Exception ex) {
                     System.out.println("Error: " + ex.getMessage());

@@ -12,6 +12,11 @@
         app:showAsAction="never"/>
 
     <item
+        android:id="@+id/m_logIn"
+        android:title="Log In"
+        app:showAsAction="never"/>
+
+    <item
         android:id="@+id/m_catalog"
         android:title="Catalog"
         app:showAsAction="never"/>

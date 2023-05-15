@@ -1,4 +1,4 @@
-package com.example.android_store;
+package com.example.android_store.account;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.android_store.ChangeImageActivity;
+import com.example.android_store.R;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 

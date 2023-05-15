@@ -18,7 +18,7 @@ import com.example.android_store.BaseActivity;
 import com.example.android_store.ChangeImageActivity;
 import com.example.android_store.R;
 import com.example.android_store.dtos.category.CategoryCreateDTO;
-import com.example.android_store.services.category.CategoryNetwork;
+import com.example.android_store.services.category.ApplicationNetwork;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -75,9 +75,9 @@ public class AddNewCategory extends BaseActivity {
         model.setDescription(txtCategoryDescription.getText().toString());
         model.setImagebase64(uriGetBase64(uri));
 
-        CategoryNetwork
+        ApplicationNetwork
                 .getInstance()
-                .getJsonApi()
+                .getCategoryApi()
                 .create(model)
                 .enqueue(new Callback<Void>() {
                     @Override
