@@ -21,7 +21,7 @@
             android:label="@string/title_activity_login"
             android:theme="@style/Theme.AndroidStore.NoActionBar" />
         <activity
-            android:name=".account.SignUpActivity"
+            android:name=".account.RegisterActivity"
             android:exported="false" />
         <activity
             android:name=".ChangeImageActivity"

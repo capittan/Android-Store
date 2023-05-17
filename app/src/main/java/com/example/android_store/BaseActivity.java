@@ -8,7 +8,7 @@ import android.view.MenuItem;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.android_store.account.LoginActivity;
-import com.example.android_store.account.SignUpActivity;
+import com.example.android_store.account.RegisterActivity;
 import com.example.android_store.catalog.AddNewCategory;
 import com.example.android_store.catalog.CatalogActivity;
 import com.example.android_store.user.UserActivity;
@@ -51,7 +51,7 @@ public class BaseActivity extends AppCompatActivity {
 
             case R.id.m_signUp:
                 try {
-                    intent = new Intent(BaseActivity.this, SignUpActivity.class);
+                    intent = new Intent(BaseActivity.this, RegisterActivity.class);
                     startActivity(intent);
                 } catch (Exception ex) {
                     System.out.println("Error: " + ex.getMessage());
